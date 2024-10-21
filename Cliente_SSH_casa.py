@@ -1,4 +1,4 @@
-import os
+import subprocess
 import tkinter as tk
 from tkinter import scrolledtext
 import paramiko
@@ -12,7 +12,9 @@ def ssh_conn():
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
-        ssh.connect(host.get(), username=user.get(), password=passw.get(),port = port.get())
+        conexion = ssh.connect(host.get(), username=user.get(), password=passw.get(),port = port.get())
+        arg ='cmd'
+        subprocess.run(arg , shell=True)
         output.insert(tk.END, "Conectado\n")
     except Exception as e:
         output.insert(tk.END, f"Error de conexión. {str(e)}\n")
@@ -32,7 +34,7 @@ tk.Label(root, text="Puerto:").grid(row=3, column=0)
 
 # Se crean los textbox donde introduciremos datos.
 host = tk.Entry(root)
-host.insert(0, "10.199.160.123")
+host.insert(0, "192.168.0.49")
 host.grid(row=0, column=1)
 user = tk.Entry(root)
 user.insert(0, "")
