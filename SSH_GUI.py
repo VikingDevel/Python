@@ -16,7 +16,7 @@ import paramiko
 
 
 ###########################################################################################################
-# Se crea una claze que contiene el código de la ventana gráfica, el shell SSH y el input box desde el que le pasamos comandos a la máquina a la que nos conectamos
+# Se crea una clase que contiene el código de la ventana gráfica, el shell SSH y el input box desde el que le pasamos comandos a la máquina a la que nos conectamos
 
 
 class SSHApp:
