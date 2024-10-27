@@ -55,8 +55,8 @@ class SSHApp:
             self.ssh_client = paramiko.SSHClient()
             self.ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             self.ssh_client.connect(self.host, username=self.username, password=self.password)
-            messagebox.showinfo("Conexión", "Conexión correcta")
-            
+            #messagebox.showinfo("Conexión", "Conexión correcta")
+            self.output_text.insert(tk.END, f"Conectado con éxito a {self.host}\n")
             # Si la conexión es correcta, se habilita el boton para enviar comandos a la máquina a la que nos hemos conectado.
             
             tk.Button(root, text="Comando", command=self.execute_command).grid(row=4, column=1, padx=10, pady=10)
