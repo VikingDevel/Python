@@ -3,7 +3,7 @@ from tkinter import messagebox
 import paramiko
 
 ###########################################################################################################
-# Developed under GPL3 - Genrral Public License
+# Developed under GPL3 - General Public License
 # https://www.gnu.org/licenses/gpl-3.0.html
 
 # This program is free software: 
@@ -60,7 +60,9 @@ class SSHApp:
             # Si la conexión es correcta, se habilita el boton para enviar comandos a la máquina a la que nos hemos conectado.
             
             tk.Button(root, text="Comando", command=self.execute_command).grid(row=4, column=1, padx=10, pady=10)
+            
         except Exception as e:
+            #Nos devuelte un mensaje con el error.
             messagebox.showerror("Conexión", f"Conexión fallida: {e}")
 
     def execute_command(self):
@@ -70,7 +72,7 @@ class SSHApp:
             output = stdout.read()
             error = stderr.read()
             self.output_text.delete(1.0, tk.END)  # Se limpia la pantalla cada vez que se ejecuta un nuevo comando
-            self.output_text.insert(tk.END, f"Salida:\n{output}\n")
+            self.output_text.insert(tk.END, output)
             if error:
                 self.output_text.insert(tk.END, f"Error:\n{error}\n")
         except Exception as e:
