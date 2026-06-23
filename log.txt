@@ -1,0 +1,11 @@
+2025-07-11 10:12:03 INFO Inici del sistema
+2025-07-11 10:12:05 WARNING Memòria baixa
+2025-07-11 10:12:10 ERROR No es troba el fitxer de configuració
+2025-07-11 10:12:15 INFO Connexió establerta
+2025-07-11 10:12:20 ERROR Error de connexió amb la base de dades
+2025-07-11 10:12:22 WARNING Temps de resposta lent
+2025-07-11 10:12:30 ERROR Usuari no autoritzat
+2025-07-11 10:12:35 INFO Procés finalitzat
+2025-07-11 10:12:40 ERROR Error d’escriptura al disc
+2025-07-11 10:12:45 WARNING Espai al disc gairebé ple
+2025-07-11 10:12:50 ERROR Error inesperat del sistema
