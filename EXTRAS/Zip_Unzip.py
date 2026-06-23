@@ -1,10 +1,8 @@
 import zipfile
 import os
-
-def comprimir_archivos(lista_archivos, nombre_zip):
-    """
-    Comprime una lista de archivos en un archivo .zip.
-    """
+#################################################################################
+def zip(lista_archivos, nombre_zip):
+    ## Función comprimir
     try:
         with zipfile.ZipFile(nombre_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for archivo in lista_archivos:
@@ -18,10 +16,8 @@ def comprimir_archivos(lista_archivos, nombre_zip):
     except Exception as e:
         print(f"Error al comprimir: {e}")
 
-def descomprimir_archivo(nombre_zip, ruta_destino):
-    """
-    Descomprime un archivo .zip en la ruta especificada.
-    """
+def unzip(nombre_zip, ruta_destino):
+    ## Función descomprimir
     try:
         with zipfile.ZipFile(nombre_zip, 'r') as zipf:
             zipf.extractall(ruta_destino)
@@ -31,9 +27,8 @@ def descomprimir_archivo(nombre_zip, ruta_destino):
 
 # --- Ejemplo de uso ---
 if __name__ == "__main__":
-    # Comprimir
-    archivos_a_comprimir = ['documento.txt', 'imagen.png']
-    comprimir_archivos(archivos_a_comprimir, 'archivo_comprimido.zip')
 
-    # Descomprimir
-    descomprimir_archivo('archivo_comprimido.zip', './carpeta_extraccion')
+    archivos_a_comprimir = ['documento.txt', 'imagen.png']
+    zip(archivos_a_comprimir, 'archivo_comprimido.zip')
+
+    unzip('archivo_comprimido.zip', './carpeta_extraccion')
